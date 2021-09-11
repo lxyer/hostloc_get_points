@@ -19,23 +19,16 @@ def randomly_gen_uspace_url() -> list:
 # 登录帐户
 def login(username: str, password: str) -> req_Session:
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36",
-        "origin":"https://hostloc.com",
-        "referer":"https://hostloc.com/forum.php",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
     }
     login_url = "https://hostloc.com/member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes&inajax=1"
     login_data = {
         "fastloginfield": "username",
         "username": username,
-        "password": password,
-        "quickforward":"yes",
-        "handlekey":"ls"
+        "password": password
     }
     s = req_Session()
-    s.headers.update(headers)
-    s.cookies.update(gen_anti_cc_cookies())
-    res = s.post(url=login_url, data=login_data)
-    res.raise_for_status()
+    s.post(url=login_url, data=login_data, headers=headers)
     return s
 
 
