@@ -24,9 +24,8 @@ result = '🏆HOSTLOC签到姬🏆\n'
 
 # TGBOTAPI = os.environ.get("TGBOTAPI")
 # TGID = os.environ.get("TGID")
-username = os.environ.get("username")
-password = os.environ.get("password")
-
+username = os.environ["HOSTLOC_USERNAME"]
+password = os.environ["HOSTLOC_PASSWORD"]
 # 【username】格式为ac1,ac2,ac3
 # 【password】格式为pw1,pw2,pw3
 
