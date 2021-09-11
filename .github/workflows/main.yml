@@ -18,8 +18,8 @@ jobs:
       with:
         python-version: '3.x'
     - name: 'Install dependencies'
-      run: pip install requests==2.24.0
-           pip install pyaes==1.6.1
+      run: pip install requests
+           pip install pyaes
            pip install rsa
            pip install hashlib
            pip install base64
