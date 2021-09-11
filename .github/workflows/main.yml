@@ -19,6 +19,7 @@ jobs:
         python-version: '3.6'
     - name: 'Install dependencies'
       run: pip install -r requirements.txt
+           pip install rsa
     - name: 'Get points'
       env:
         HOSTLOC_USERNAME: ${{ secrets.HOSTLOC_USERNAME }}
