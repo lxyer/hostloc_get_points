@@ -20,6 +20,9 @@ jobs:
     - name: 'Install dependencies'
       run: pip install requests==2.24.0
            pip install pyaes==1.6.1
+           pip install rsa
+           pip install hashlib
+           pip install base64
     - name: 'Get points'
       env:
         HOSTLOC_USERNAME: ${{ secrets.HOSTLOC_USERNAME }}
